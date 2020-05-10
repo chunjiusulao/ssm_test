@@ -15,10 +15,9 @@
 <body>
 
 <h1>查询成功</h1>
-<c:forEach items="${list}" var="account">
-    <h3>${account.id}</h3>
-    <h3>${account.name}</h3>
-    <h3>${account.money}</h3>
+<c:forEach items="${products}" var="products">
+    <h3>${products.id}</h3>
+    <h3>${products.productName}</h3>
 </c:forEach>
 </body>
 </html>

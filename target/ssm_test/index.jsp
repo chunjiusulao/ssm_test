@@ -11,12 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/account/findAll">测试查询</a>
-<h1>测试保存</h1>
-<form action="/account/save" method="post">
-    <input type="text" name="name">
-    <input type="text" name="money">
-    <input type="submit" value="提交">
-</form>
+<a href="/product/findAll">测试查询所有信息</a>
 </body>
 </html>
