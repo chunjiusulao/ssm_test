@@ -22,6 +22,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> selectAll() {
         List<Product> products = productMapper.selectAll();
+        for (Product product : products) {
+            System.out.println(product);
+        }
         return products;
     }
 }

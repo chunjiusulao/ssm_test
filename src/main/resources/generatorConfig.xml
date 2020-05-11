@@ -24,7 +24,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成mapper.xml配置文件位置 -->
-        <sqlMapGenerator targetPackage="com.itjm.dao"
+        <sqlMapGenerator targetPackage="com.itjm.mapping"
                          targetProject="G:/repository/ssm_test/src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>

@@ -17,7 +17,7 @@
 <h1>查询成功</h1>
 <c:forEach items="${products}" var="products">
     <h3>${products.id}</h3>
-    <h3>${products.productName}</h3>
+    <h3>${products.productname}</h3>
 </c:forEach>
 </body>
 </html>

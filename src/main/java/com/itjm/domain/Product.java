@@ -85,4 +85,18 @@ public class Product {
     public void setProductstatus(Integer productstatus) {
         this.productstatus = productstatus;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", productnum='" + productnum + '\'' +
+                ", productname='" + productname + '\'' +
+                ", cityname='" + cityname + '\'' +
+                ", departuretime=" + departuretime +
+                ", productprice=" + productprice +
+                ", productdesc='" + productdesc + '\'' +
+                ", productstatus=" + productstatus +
+                '}';
+    }
 }
