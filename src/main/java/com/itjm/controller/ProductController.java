@@ -29,4 +29,9 @@ public class ProductController {
         mv.setViewName("success");
         return mv;
     }
+
+    @RequestMapping("/aa")
+    public String toIndex(){
+        return "index";
+    }
 }

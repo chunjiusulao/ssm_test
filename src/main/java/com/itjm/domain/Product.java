@@ -1,5 +1,6 @@
 package com.itjm.domain;
 
+import com.itjm.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -14,7 +15,7 @@ public class Product {
 
     private String cityname;
 
-    private Date departuretime;
+    private String departuretime;
 
     private BigDecimal productprice;
 
@@ -54,11 +55,14 @@ public class Product {
         this.cityname = cityname == null ? null : cityname.trim();
     }
 
-    public Date getDeparturetime() {
+    public String getDeparturetime() {
+        if (departuretime!=null){
+            departuretime= DateUtils.date2String(departuretime,"yyyy-MM-dd HH:mm:ss");
+        }
         return departuretime;
     }
 
-    public void setDeparturetime(Date departuretime) {
+    public void setDeparturetime(String departuretime) {
         this.departuretime = departuretime;
     }
 

@@ -39,8 +39,19 @@
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  <!--解决中文乱码的过滤器-->
+
+    <!-- 静态资源 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.gif</url-pattern>
+        <url-pattern>*.png</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+
+
+    <!--解决中文乱码的过滤器-->
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -53,4 +64,5 @@
     <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
 </web-app>

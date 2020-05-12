@@ -12,5 +12,6 @@
 </head>
 <body>
 <a href="/product/findAll">测试查询所有信息</a>
+<a href="/product/aa">测试</a>
 </body>
 </html>
