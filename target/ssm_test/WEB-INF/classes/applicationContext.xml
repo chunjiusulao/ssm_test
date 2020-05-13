@@ -44,7 +44,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <!--自动扫描mappering.xml文件-->
-        <property name="mapperLocations" value="classpath:com/itjm/mapping/*.xml"></property>
+        <property name="mapperLocations" value="classpath*:com/itjm/mapping/*.xml"></property>
         <property name="plugins">
             <array>
                 <!--传入插件的对象-->

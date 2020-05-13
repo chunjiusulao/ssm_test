@@ -27,4 +27,12 @@ public class ProductServiceImpl implements ProductService {
         }
         return products;
     }
+
+    @Override
+    public int addProduct(Product product) {
+        int i = productMapper.insert(product);
+        return i;
+    }
+
+
 }

@@ -15,7 +15,9 @@ public class Product {
 
     private String cityname;
 
-    private String departuretime;
+    private Date departuretime;
+
+    private String departuretimestr;
 
     private BigDecimal productprice;
 
@@ -52,17 +54,14 @@ public class Product {
     }
 
     public void setCityname(String cityname) {
-        this.cityname = cityname == null ? null : cityname.trim();
+        this.cityname = cityname == null ? null : cityname;
     }
 
-    public String getDeparturetime() {
-        if (departuretime!=null){
-            departuretime= DateUtils.date2String(departuretime,"yyyy-MM-dd HH:mm:ss");
-        }
+    public Date getDeparturetime() {
         return departuretime;
     }
 
-    public void setDeparturetime(String departuretime) {
+    public void setDeparturetime(Date departuretime) {
         this.departuretime = departuretime;
     }
 
@@ -90,6 +89,17 @@ public class Product {
         this.productstatus = productstatus;
     }
 
+    public String getDeparturetimestr() {
+        if (departuretime!=null){
+            departuretimestr=DateUtils.date2String(departuretime,"yy-MM-dd HH-mm-ss");
+        }
+        return departuretimestr;
+    }
+
+    public void setDeparturetimestr(String departuretimestr) {
+        this.departuretimestr = departuretimestr;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -98,6 +108,7 @@ public class Product {
                 ", productname='" + productname + '\'' +
                 ", cityname='" + cityname + '\'' +
                 ", departuretime=" + departuretime +
+                ", departuretimestr='" + departuretimestr + '\'' +
                 ", productprice=" + productprice +
                 ", productdesc='" + productdesc + '\'' +
                 ", productstatus=" + productstatus +
