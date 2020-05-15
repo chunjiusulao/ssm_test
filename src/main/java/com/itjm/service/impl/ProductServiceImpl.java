@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @author 靳明
- * @Description:
+ * @Description:产品方法实现类
  * @date 2020/5/10  13:24
  */
 @Service
