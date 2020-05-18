@@ -29,8 +29,32 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product selectByPrimaryKey(String id) {
+        Product product=new Product();
+        product= productMapper.selectByPrimaryKey(id);
+        return product;
+    }
+
+    @Override
     public int addProduct(Product product) {
         int i = productMapper.insert(product);
+        return i;
+    }
+
+    @Override
+    public int updateProduct(Product product) {
+        int i=productMapper.updateByPrimaryKey(product);
+        return i;
+    }
+
+    public int updateProductStatus(Product product){
+        int i=productMapper.updateStatusByPrimaryKey(product);
+        return i;
+    }
+
+    @Override
+    public int delateProductByPrimaryKey(String id) {
+        int i=productMapper.deleteByPrimaryKey(id);
         return i;
     }
 

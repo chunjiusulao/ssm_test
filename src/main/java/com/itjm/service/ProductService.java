@@ -12,5 +12,13 @@ import java.util.List;
 public interface ProductService {
     public List<Product> selectAll();
 
+    public Product selectByPrimaryKey(String id);
+
     public int addProduct(Product product);
+
+    public int updateProduct(Product product);
+
+    public int updateProductStatus(Product product);
+
+    public int delateProductByPrimaryKey(String id);
 }
