@@ -17,6 +17,10 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <!--定义一个request监听器-->
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
   <!--设置配置文件的路径-->
   <context-param>
     <param-name>contextConfigLocation</param-name>

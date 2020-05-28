@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="java_course@localhost" uuid="8bcbae7e-b62a-4627-930e-8517ce55b220">
-      <database-info product="MySQL" version="5.7.25" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MYSQL" exact-version="5.7.25" exact-driver-version="5.1">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <introspection-schemas>*:@</introspection-schemas>
-    </data-source>
     <data-source name="shopping_mall@localhost" uuid="be3e6a6d-103b-4139-aede-9cfe04f1e90f">
       <database-info product="MySQL" version="5.7.25" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MYSQL" exact-version="5.7.25" exact-driver-version="5.1">
         <extra-name-characters>#@</extra-name-characters>

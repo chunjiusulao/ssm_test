@@ -59,7 +59,7 @@ public class ProductController {
      * @Date: 2020/5/17 10:33
      */
     @RequestMapping("/addProduct")
-    public String addProduct(Model model, Product product) throws ParseException {
+    public String addProduct(RedirectAttributes redirectAttributes,Product product) throws ParseException {
         log.info(product.toString());
         Message msg=new Message();
         Date date=DateUtils.string2Date(product.getDepartureTimeStr(),"yyyy-MM-dd HH:mm:ss");
@@ -72,7 +72,7 @@ public class ProductController {
         }else {
             msg.setErrorMessage("添加失败");
         }
-        model.addAttribute("msg",msg);
+       redirectAttributes.addFlashAttribute("msg",msg);
         return "redirect:/admin/product_list?page=1";
     }
 
@@ -86,7 +86,7 @@ public class ProductController {
      * @Date: 2020/5/17 10:33
      */
     @RequestMapping("/updateProduct")
-    public String updateProduct(Model model, Product product) throws ParseException {
+    public String updateProduct(RedirectAttributes redirectAttributes, Product product) throws ParseException {
         Message msg=new Message();
         Date date=DateUtils.string2Date(product.getDepartureTimeStr(),"yyyy-MM-dd HH:mm:ss");
         if (product!=null) {
@@ -96,7 +96,7 @@ public class ProductController {
         }else {
             msg.setErrorMessage("修改失败");
         }
-        model.addAttribute("msg",msg);
+       redirectAttributes.addFlashAttribute("msg",msg);
         return "redirect:/admin/product_list?page=1";
     }
 

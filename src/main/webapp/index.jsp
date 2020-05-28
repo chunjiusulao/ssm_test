@@ -86,11 +86,13 @@
 														</span>
                                             </label>
 
-                                                <button type="submit" class=" pull-right btn btn-sm btn-primary">
+                                            <div style="text-align: center">
+                                                <button type="submit" style="width: 100px;" class=" btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-key"></i>
                                                     <span class="bigger-110">登 录</span>
                                                 </button>
 
+                                            </div>
 
                                             <div class="space-4"></div>
                                         </fieldset>
@@ -103,13 +105,6 @@
                                         </div>
                                     </div>
                                 </c:if>
-
-                                <div class="toolbar clearfix col-sm-12 align-center" style="width: 100%;">
-                                    <div>
-                                        <a href="javascript:void(0);" class="forgot-password-link">
-                                            MagicalRainbow Technology Co.Ltd.
-                                        </a>
-                                    </div>
                                 </div>
                             </div><!-- /.widget-body -->
                         </div><!-- /.login-box -->

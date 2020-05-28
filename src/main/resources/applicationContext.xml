@@ -66,15 +66,17 @@
     </bean>
 
     <!--配置事务通知-->
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="find*" read-only="true"/>
             <tx:method name="*" isolation="DEFAULT"></tx:method>
         </tx:attributes>
     </tx:advice>
-
+-->
     <!--配置AOP增强-->
-    <aop:config>
+    <!--<aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.itjm.service.impl.*ServiceImpl.*(..))"></aop:advisor>
-    </aop:config>
+    </aop:config>-->
+
+
 </beans>
