@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itjm.dao.LogMapper" >
+  <resultMap id="BaseResultMap" type="com.itjm.domain.Log" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="visitTime" property="visitTime" jdbcType="TIMESTAMP" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="executionTime" property="executionTime" jdbcType="BIGINT" />
+    <result column="method" property="method" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, visitTime, userName, ip, url, executionTime, method
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_log
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectLog" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_log
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_log
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.itjm.domain.Log" >
+    insert into t_log (id, visitTime, userName, 
+      ip, url, executionTime, 
+      method)
+    values (#{id,jdbcType=VARCHAR}, #{visitTime,jdbcType=TIMESTAMP}, #{userName,jdbcType=VARCHAR}, 
+      #{ip,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{executionTime,jdbcType=BIGINT}, 
+      #{method,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.itjm.domain.Log" >
+    insert into t_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="visitTime != null" >
+        visitTime,
+      </if>
+      <if test="userName != null" >
+        userName,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="executionTime != null" >
+        executionTime,
+      </if>
+      <if test="method != null" >
+        method,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="visitTime != null" >
+        #{visitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTime != null" >
+        #{executionTime,jdbcType=BIGINT},
+      </if>
+      <if test="method != null" >
+        #{method,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.itjm.domain.Log" >
+    update t_log
+    <set >
+      <if test="visitTime != null" >
+        visitTime = #{visitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userName != null" >
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTime != null" >
+        executionTime = #{executionTime,jdbcType=BIGINT},
+      </if>
+      <if test="method != null" >
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.itjm.domain.Log" >
+    update t_log
+    set visitTime = #{visitTime,jdbcType=TIMESTAMP},
+      userName = #{userName,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      executionTime = #{executionTime,jdbcType=BIGINT},
+      method = #{method,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

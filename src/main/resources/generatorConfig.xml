@@ -51,10 +51,10 @@
             flase:在使用role_id这种命名规则时，生成字段按驼峰命名法来规范,在使用roleId这种命名规则时会变成roleid&ndash;&gt;
             <property name="useActualColumnNames" value="true"/>
         </table>-->
-        <table tableName="t_log" domainObjectName="Log" enableCountByExample="false" enableUpdateByExample="false"
+       <!-- <table tableName="t_log" domainObjectName="Log" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
                       <property name="useActualColumnNames" value="true"/>
-        </table>
+        </table>-->
         <!--
         <table tableName="t_member" domainObjectName="Member" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
@@ -62,22 +62,17 @@
             flase:在使用role_id这种命名规则时，生成字段按驼峰命名法来规范,在使用roleId这种命名规则时会变成roleid&ndash;&gt;
             <property name="useActualColumnNames" value="true"/>
         </table>
+        -->
         <table tableName="t_order" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            &lt;!&ndash;设置生成字段的命名规则，true:与数据库字段完全相同,
-            flase:在使用role_id这种命名规则时，生成字段按驼峰命名法来规范,在使用roleId这种命名规则时会变成roleid&ndash;&gt;
-            <property name="useActualColumnNames" value="true"/>
+           <property name="useActualColumnNames" value="true"/>
         </table>
-        <table tableName="t_passenger" domainObjectName="Passenger" enableCountByExample="false" enableUpdateByExample="false"
+        <!--<table tableName="t_passenger" domainObjectName="Passenger" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            &lt;!&ndash;设置生成字段的命名规则，true:与数据库字段完全相同,
-            flase:在使用role_id这种命名规则时，生成字段按驼峰命名法来规范,在使用roleId这种命名规则时会变成roleid&ndash;&gt;
-            <property name="useActualColumnNames" value="true"/>
-        </table>&ndash;&gt;
-        <table tableName="t_permissions" domainObjectName="Permissions" enableCountByExample="false" enableUpdateByExample="false"
+           <property name="useActualColumnNames" value="true"/>
+        </table>-->
+       <!-- <table tableName="t_permissions" domainObjectName="Permissions" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            &lt;!&ndash;设置生成字段的命名规则，true:与数据库字段完全相同,
-            flase:在使用role_id这种命名规则时，生成字段按驼峰命名法来规范,在使用roleId这种命名规则时会变成roleid&ndash;&gt;
             <property name="useActualColumnNames" value="true"/>
         </table>-->
     </context>

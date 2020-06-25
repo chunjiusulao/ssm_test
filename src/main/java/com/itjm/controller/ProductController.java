@@ -29,26 +29,10 @@ import java.util.*;
 public class ProductController {
     private static Logger log = LoggerFactory.getLogger(ProductController.class);
     @Autowired
-    public ProductService productService;
+    private ProductService productService;
 
 
 
-    /*
-     * 功能描述: <br>
-     * 〈查询全部产品〉
-     * @Param: []
-     * @Return: org.springframework.web.servlet.ModelAndView
-     * @Author: 靳明
-     * @Date: 2020/5/17 10:33
-     */
-    @RequestMapping("/findAllProduct")
-    public ModelAndView findAll(){
-        ModelAndView mv=new ModelAndView();
-        List<Product> products = productService.selectAll();
-        mv.addObject("products",products);
-        mv.setViewName("success");
-        return mv;
-    }
 
     /*
      * 功能描述: <br>
@@ -102,7 +86,7 @@ public class ProductController {
 
     /*
      * 功能描述: <br>
-     * 〈产品启用或禁用〉
+     * 〈产品审核通过〉
      * @Param: [id, status]
      * @Return: java.util.Map<java.lang.String,java.lang.String>
      * @Author: 靳明
@@ -125,6 +109,14 @@ public class ProductController {
         return map;
     }
 
+    /*
+     * 功能描述: <br>
+     * 〈删除待审核产品〉
+     * @Param: [id]
+     * @Return: java.util.Map<java.lang.String,java.lang.String>
+     * @Author: 靳明
+     * @Date: 2020/6/24 16:38
+     */
     @RequestMapping("/deleteProductByPrimaryKey/{id}")
     @ResponseBody
     public Map<String,String> deleteProductByPrimaryKey(@PathVariable("id") String id){
@@ -140,9 +132,4 @@ public class ProductController {
     }
 
 
-
-    @RequestMapping("/aa")
-    public String toIndex(){
-        return "index";
-    }
 }

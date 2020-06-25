@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itjm.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.itjm.domain.Product" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="productNum" property="productNum" jdbcType="VARCHAR" />
+    <result column="productName" property="productName" jdbcType="VARCHAR" />
+    <result column="cityName" property="cityName" jdbcType="VARCHAR" />
+    <result column="departureTime" property="departureTime" jdbcType="TIMESTAMP" />
+    <result column="productPrice" property="productPrice" jdbcType="DECIMAL" />
+    <result column="productDesc" property="productDesc" jdbcType="VARCHAR" />
+    <result column="productStatus" property="productStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, productNum, productName, cityName, departureTime, productPrice, productDesc, 
+    productStatus
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_product
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from t_product
+        where productStatus=0
+    </select>
+  <select id="selectInspectAll" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from t_product
+    where productStatus=1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_product
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.itjm.domain.Product" >
+    insert into t_product (id, productNum, productName, 
+      cityName, departureTime, productPrice, 
+      productDesc, productStatus)
+    values (#{id,jdbcType=VARCHAR}, #{productNum,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
+      #{cityName,jdbcType=VARCHAR}, #{departureTime,jdbcType=TIMESTAMP}, #{productPrice,jdbcType=DECIMAL}, 
+      #{productDesc,jdbcType=VARCHAR}, #{productStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.itjm.domain.Product" >
+    insert into t_product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="productNum != null" >
+        productNum,
+      </if>
+      <if test="productName != null" >
+        productName,
+      </if>
+      <if test="cityName != null" >
+        cityName,
+      </if>
+      <if test="departureTime != null" >
+        departureTime,
+      </if>
+      <if test="productPrice != null" >
+        productPrice,
+      </if>
+      <if test="productDesc != null" >
+        productDesc,
+      </if>
+      <if test="productStatus != null" >
+        productStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="productNum != null" >
+        #{productNum,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="departureTime != null" >
+        #{departureTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productPrice != null" >
+        #{productPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="productDesc != null" >
+        #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="productStatus != null" >
+        #{productStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.itjm.domain.Product" >
+    update t_product
+    <set >
+      <if test="productNum != null" >
+        productNum = #{productNum,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        productName = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        cityName = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="departureTime != null" >
+        departureTime = #{departureTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productPrice != null" >
+        productPrice = #{productPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="productDesc != null" >
+        productDesc = #{productDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="productStatus != null" >
+        productStatus = #{productStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.itjm.domain.Product" >
+    update t_product
+    set productNum = #{productNum,jdbcType=VARCHAR},
+      productName = #{productName,jdbcType=VARCHAR},
+      cityName = #{cityName,jdbcType=VARCHAR},
+      departureTime = #{departureTime,jdbcType=TIMESTAMP},
+      productPrice = #{productPrice,jdbcType=DECIMAL},
+      productDesc = #{productDesc,jdbcType=VARCHAR},
+      productStatus = #{productStatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateStatusByPrimaryKey" parameterType="com.itjm.domain.Product">
+    update t_product
+    set productStatus = #{productStatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itjm.dao.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.itjm.domain.Order" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="orderNum" property="orderNum" jdbcType="VARCHAR" />
+    <result column="orderTime" property="orderTime" jdbcType="TIMESTAMP" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="orderDesc" property="orderDesc" jdbcType="VARCHAR" />
+    <result column="payType" property="payType" jdbcType="INTEGER" />
+    <result column="orderStatus" property="orderStatus" jdbcType="INTEGER" />
+    <result column="productId" property="productId" jdbcType="VARCHAR" />
+    <result column="productName" property="productName" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, orderNum, orderTime, money, count, orderDesc, payType, orderStatus, productId, 
+    productName, userName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_order
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_order
+    where userName=#{userName,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_order
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.itjm.domain.Order" >
+    insert into t_order (id, orderNum, orderTime, 
+      money, count, orderDesc, 
+      payType, orderStatus, productId, 
+      productName, userName)
+    values (#{id,jdbcType=VARCHAR}, #{orderNum,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{money,jdbcType=DECIMAL}, #{count,jdbcType=INTEGER}, #{orderDesc,jdbcType=VARCHAR}, 
+      #{payType,jdbcType=INTEGER}, #{orderStatus,jdbcType=INTEGER}, #{productId,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.itjm.domain.Order" >
+    insert into t_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderNum != null" >
+        orderNum,
+      </if>
+      <if test="orderTime != null" >
+        orderTime,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="orderDesc != null" >
+        orderDesc,
+      </if>
+      <if test="payType != null" >
+        payType,
+      </if>
+      <if test="orderStatus != null" >
+        orderStatus,
+      </if>
+      <if test="productId != null" >
+        productId,
+      </if>
+      <if test="productName != null" >
+        productName,
+      </if>
+      <if test="userName != null" >
+        userName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null" >
+        #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="orderDesc != null" >
+        #{orderDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.itjm.domain.Order" >
+    update t_order
+    <set >
+      <if test="orderNum != null" >
+        orderNum = #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        orderTime = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="orderDesc != null" >
+        orderDesc = #{orderDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        payType = #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null" >
+        orderStatus = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        productId = #{productId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        productName = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.itjm.domain.Order" >
+    update t_order
+    set orderNum = #{orderNum,jdbcType=VARCHAR},
+      orderTime = #{orderTime,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=DECIMAL},
+      count = #{count,jdbcType=INTEGER},
+      orderDesc = #{orderDesc,jdbcType=VARCHAR},
+      payType = #{payType,jdbcType=INTEGER},
+      orderStatus = #{orderStatus,jdbcType=INTEGER},
+      productId = #{productId,jdbcType=VARCHAR},
+      productName = #{productName,jdbcType=VARCHAR},
+      userName = #{userName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

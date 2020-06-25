@@ -12,6 +12,8 @@ import java.util.List;
 public interface ProductService {
     public List<Product> selectAll();
 
+    public List<Product> selectInspectAll();
+
     public Product selectByPrimaryKey(String id);
 
     public int addProduct(Product product);

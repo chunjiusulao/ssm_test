@@ -1,0 +1,31 @@
+/* APP文章样式 */
+.title{
+	line-height: 1.5em;
+}
+.headimg{
+	float: left;
+	margin-right: 10px;
+	
+}
+.headtext{
+	font-size: 0.5em;
+}
+.noheadtext{
+	font-size: 0.875em;
+	margin-left: 10px;
+}
+.error{
+	background-color: rgb(246,246,246);
+}
+.errorwapper{
+	margin-top: 6em;
+	font-size: 2em;
+	font-weight: bold;
+	color: rgb(123,168,187);
+}
+.errortext1{
+	margin-left: 1em;
+}
+.errortext2{
+	margin-left: 3em;
+}

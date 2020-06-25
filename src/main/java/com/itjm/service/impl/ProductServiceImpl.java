@@ -29,6 +29,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> selectInspectAll() {
+        List<Product> products = productMapper.selectInspectAll();
+        for (Product product : products) {
+            System.out.println(product);
+        }
+        return products;
+    }
+
+    @Override
     public Product selectByPrimaryKey(String id) {
         Product product=new Product();
         product= productMapper.selectByPrimaryKey(id);
