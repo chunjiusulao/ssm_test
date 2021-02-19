@@ -1,2 +1,2 @@
-# ssm_test
- first_project
+# 超市商品管理系统
+ 我也不知道我在做什么
